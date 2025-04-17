@@ -1,0 +1,2 @@
+# Hands-On-VPN-Active-Directory-and-Firewall-Security-Configuration
+This project documents my work completing a hands-on lab focused on securing enterprise infrastructures using encrypted VPN communication, user authentication, and secure firewall configuration. It forms part of my ongoing journey to become a Linux Systems Administrator, by building cross-platform skills critical to managing secure systems.
