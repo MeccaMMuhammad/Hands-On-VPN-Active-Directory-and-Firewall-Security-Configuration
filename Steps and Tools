@@ -1,0 +1,91 @@
+🔧 Exercise 1 – Install and Configure a VPN Server
+Key Steps:
+
+Configured ACIDM01 as a Remote Access and VPN server
+
+Enabled Routing and Remote Access (RRAS)
+
+Defined static IP address pool for VPN clients (192.168.0.99–100)
+
+Enabled detailed logging to monitor VPN access attempts
+
+Configured Windows Defender Firewall to allow VPN traffic across Domain, Private, and Public profiles
+
+Created a custom Event Viewer log filter for RasClient events
+
+👥 Exercise 2 – Create VPN User and Client
+Step 1: Create VPN User in Active Directory
+Created Organizational Unit: Users VPN
+
+Created user: Security Plus (Secplus@aciplab.com)
+
+Granted group membership: Remote Desktop Users
+
+Enabled dial-in access for VPN connection
+
+Step 2: Configure VPN Client
+Configured VPN on ACIWIN11 using Windows built-in VPN client
+
+Connected to the VPN server via PPTP using user credentials
+
+Verified successful connection from ACIDM01
+
+Used ACIKALI to ping the VPN-assigned client IP (192.168.0.100) to confirm connectivity
+
+🔐 Exercise 3 – Configure a L2TP/IPsec VPN
+Step 1: Server-Side Configuration
+Generated a Pre-Shared Key (PSK) using pskgen.com
+
+Enabled custom IPsec policy on the VPN server
+
+Applied the PSK to Routing and Remote Access (RRAS)
+
+Restarted RRAS services for changes to take effect
+
+Step 2: Client-Side Configuration
+Configured new VPN on ACIWIN11 using L2TP/IPsec with PSK
+
+Connected successfully using same user credentials (Secplus)
+
+Verified encrypted tunnel via Windows Defender Firewall > Security Associations
+
+Reviewed Main Mode (encryption and authentication parameters)
+
+Reviewed Quick Mode (data transfer protocols and security encapsulation)
+
+🔍 Security Concepts Practiced
+Encryption in transit using PPTP and L2TP/IPsec
+
+Authentication and Authorization using Active Directory and VPN Dial-in policies
+
+Firewall configuration to allow secure communication
+
+Logging and Monitoring of VPN access events for accountability and visibility
+
+🌐 Why This Matters for My Linux Systems Admin Journey
+Although this lab was Windows-focused, it directly supports my goal of becoming a Linux Systems Administrator by reinforcing key security concepts that apply across operating systems:
+
+Implementing secure remote access methods using VPNs
+
+Managing user authentication and directory services
+
+Analyzing logs and managing firewall rules
+
+Understanding IPsec-based encryption protocols
+
+These are the same foundations used in Linux environments (e.g., OpenVPN, IPsec tools, ufw/firewalld, journald, LDAP), making this experience highly transferable.
+
+🧰 Tools & Technologies Used
+Windows Server 2022
+
+Active Directory Users and Computers
+
+Routing and Remote Access Services (RRAS)
+
+Windows Defender Firewall
+
+Event Viewer (Custom Logs)
+
+L2TP/IPsec VPN
+
+Kali Linux (Ping verification)
